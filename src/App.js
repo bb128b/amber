@@ -9,6 +9,9 @@ import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
+import firebase, { auth } from './core/firebase.js';
+const firebaseui = require('firebaseui');
+const firebaseuiCSS = require('firebaseui/dist/firebaseui.css');
 
 const styles = theme => ({
   root: {
@@ -26,6 +29,25 @@ const styles = theme => ({
 
 function ButtonAppBar(props) {
   const classes = props.classes;
+
+     // Initialize the FirebaseUI Widget using Firebase.
+     var ui = new firebaseui.auth.AuthUI(firebase.auth());
+     // The start method will wait until the DOM is loaded.
+     ui.start('#firebaseui-auth-container', {
+          signInSuccessUrl: '<url-to-redirect-to-on-success>',
+          signInOptions: [
+            // Leave the lines as is for the providers you want to offer your users.
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+            // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+            // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+            firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            firebase.auth.PhoneAuthProvider.PROVIDER_ID
+          ],
+          // Terms of service url.
+          tosUrl: '<your-tos-url>'
+        });
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -42,6 +64,7 @@ function ButtonAppBar(props) {
       <Typography type="display4" gutterBottom>
         {'This is app'}
       </Typography>
+<div id='firebaseui-auth-container'></div>
     </div>
   );
 }
