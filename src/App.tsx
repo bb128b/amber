@@ -19,7 +19,7 @@ class App extends React.Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        <div className="App">
+        <div className='App'>
           <AppBar />
           <Notes />
         </div>

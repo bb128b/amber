@@ -1,58 +1,35 @@
 import * as React from 'react'
-import { withStyles } from 'material-ui/styles'
-import Grid from 'material-ui/Grid'
-import Note from './NoteCard/index'
-import Button from 'material-ui/Button'
-import AddIcon from 'material-ui-icons/Add'
 import { connect } from 'react-redux'
+import { withStyles } from 'material-ui/styles'
 
-interface IStateProps {
-  list: any[]
+import NoteList from './NoteList'
+import AddNote from './AddNote'
+import AddIcon from 'material-ui-icons/Add'
+import Button from 'material-ui/Button'
+import { show } from './AddNote/actions'
+
+interface IDispatchProps {
+  onAddClick: () => void
 }
 
-function Dashboard(props: any) {
-  const { classes, list } = props
+type IProps = IDispatchProps
+
+function NotesPage(props: IProps) {
+  const { classes, onAddClick } = props as any
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={24}>
-        {
-          list.map((value) => (
-            <Grid item xs={12}>
-              <Note {...value} />
-            </Grid>
-          ))
-        }
-        {
-          list.map((value) => (
-            <Grid item xs={12}>
-              <Note {...value} />
-            </Grid>
-          ))
-        }
-        {
-          list.map((value) => (
-            <Grid item xs={12}>
-              <Note {...value} />
-            </Grid>
-          ))
-        }
-        {
-          list.map((value) => (
-            <Grid item xs={12}>
-              <Note {...value} />
-            </Grid>
-          ))
-        }
-      </Grid>
+      <NoteList />
       <Button
+        className={classes.addButton}
+        onClick={onAddClick}
+        aria-label='add'
+        color='primary'
         fab
-        color="primary"
-        aria-label="add"
-        className={classes.fab}
       >
         <AddIcon />
       </Button>
+      <AddNote />
     </div>
   )
 }
@@ -63,18 +40,18 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2,
     marginTop: 56
   },
-  fab: {
+  addButton: {
     position: 'fixed' as 'fixed',
     bottom: theme.spacing.unit * 2,
     right: theme.spacing.unit * 2
   },
 })
-// IOwnProps, StyleRules
-const StyledComponent = withStyles(styles)(Dashboard)
 
-export default connect<IStateProps, null, null>(
-  (state: any) => ({
-    list: state.notes
-  }),
-  null
+const StyledComponent = withStyles(styles)(NotesPage as any)
+
+export default connect<null, IDispatchProps, null>(
+  null,
+  (dispatch: any) => ({
+    onAddClick: () => { dispatch(show()) },
+  })
 )(StyledComponent)

@@ -30,15 +30,15 @@ function AppBar(props: any) {
   const classes = props.classes
   return (
     <div className={classes.root}>
-      <MuiAppBar position="fixed">
+      <MuiAppBar position='fixed'>
         <Toolbar>
-          <IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
+          <IconButton className={classes.menuButton} color='contrast' aria-label='Menu'>
             <MenuIcon />
           </IconButton>
-          <Typography type="title" color="inherit" className={classes.flex}>
+          <Typography type='title' color='inherit' className={classes.flex}>
             Amber
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color='inherit'>Login</Button>
         </Toolbar>
       </MuiAppBar>
     </div>
