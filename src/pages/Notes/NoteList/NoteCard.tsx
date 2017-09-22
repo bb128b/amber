@@ -41,7 +41,6 @@ function SimpleCard(props: any) {
           </Typography>
           <Typography component='p'>
             well meaning and kindly.<br />
-            {'"a benevolent smile"'}
           </Typography>
         </CardContent>
         <CardActions>

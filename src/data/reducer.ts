@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
-import notes from './data/notes'
+import notes from './notes/reducer'
+import ui from 'pages/reducer'
 
 const reducer = combineReducers({
-  notes
+  notes,
+  ui
 })
 
 export default reducer
