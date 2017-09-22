@@ -1,22 +1,31 @@
-import * as React from 'react';
-import './App.css';
+import * as React from 'react'
+import Notes from 'pages/Notes'
+import AppBar from 'components/AppBar'
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
+import blue from 'material-ui/colors/blue'
+import pink from 'material-ui/colors/pink'
 
-const logo = require('./logo.svg');
+const theme = createMuiTheme({
+  palette: {
+    primary: blue,
+    secondary: pink
+    // type: 'dark', // Switching the dark mode on is a single property value change.
+  },
+})
+
+// console.log('Theme', theme);
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <MuiThemeProvider theme={theme}>
+        <div className="App">
+          <AppBar />
+          <Notes />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
+      </MuiThemeProvider>
+    )
   }
 }
 
-export default App;
+export default App
