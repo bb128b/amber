@@ -24,7 +24,7 @@ function NotesPage(props: IProps) {
         className={classes.addButton}
         onClick={onAddClick}
         aria-label='add'
-        color='primary'
+        color='accent'
         fab
       >
         <AddIcon />

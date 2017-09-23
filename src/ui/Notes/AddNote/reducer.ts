@@ -1,12 +1,12 @@
 import Types from './actions'
-import { Action } from 'data/utils'
+import { Action } from 'utils/redux'
 
 export type IState = {
   isOpen: boolean
 }
 
 const initialState = {
-  isOpen: true
+  isOpen: false
 }
 
 export default function reducer(state: IState = initialState, action: Action<Types, IState> = {}) {
