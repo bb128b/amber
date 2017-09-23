@@ -1,7 +1,8 @@
 import * as React from 'react'
 import Grid from 'material-ui/Grid'
-import Note from './NoteCard'
+import NoteCard from '../NoteCard'
 import { connect } from 'react-redux'
+import { getNotes } from 'data/notes/actions'
 
 interface IStateProps {
   list: any[]
@@ -9,11 +10,11 @@ interface IStateProps {
 
 function NoteList({ list }: IStateProps) {
   return (
-    <Grid container spacing={24}>
+    <Grid container spacing={16}>
       {
         list.map((value) => (
           <Grid item xs={12}>
-            <Note {...value} />
+            <NoteCard {...value} />
           </Grid>
         ))
       }
@@ -23,7 +24,7 @@ function NoteList({ list }: IStateProps) {
 
 export default connect<IStateProps, null, null>(
   (state: any) => ({
-    list: state.notes
+    list: getNotes(state)
   }),
   null
 )(NoteList)

@@ -18,9 +18,9 @@
     "noUnusedLocals": true,
     "baseUrl": ".",
     "paths": {
-       "components/*": [ "src/components/*" ],
        "data/*": [ "src/data/*" ],
-       "pages/*": [ "src/pages/*" ]
+       "ui/*": [ "src/ui/*" ],
+       "utils/*": [ "src/utils/*" ]
      }
   },
   "exclude": [

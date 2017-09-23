@@ -1,13 +1,19 @@
 import * as React from 'react'
 import { render } from 'react-dom'
-import { applyMiddleware, createStore } from 'redux'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
 import { Provider } from 'react-redux'
 import logger from 'redux-logger'
 
-import App from './App'
-import reducer from './data/reducer'
+import App from 'ui/App'
+import ui from 'ui/reducer'
+import data from 'data/reducer'
 
-const store = createStore(reducer, applyMiddleware(logger))
+const store = createStore(
+  combineReducers({
+    data,
+    ui
+  }),
+  applyMiddleware(logger))
 
 render(
   <Provider store={store}>

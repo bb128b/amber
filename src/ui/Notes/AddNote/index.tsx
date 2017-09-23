@@ -28,7 +28,6 @@ type IDispatchProps = {
 type IProps = IDispatchProps & IState & { classes: ClassNames }
 
 function AddNoteDialog({ classes, isOpen, onCloseClick }: IProps) {
-
   return (
     <div>
       <Dialog
