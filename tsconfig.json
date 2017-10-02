@@ -15,12 +15,9 @@
     "noImplicitAny": false,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
     "baseUrl": ".",
     "paths": {
-       "data/*": [ "src/data/*" ],
-       "ui/*": [ "src/ui/*" ],
-       "utils/*": [ "src/utils/*" ]
+       "*": [ "*", "src/*" ]
      }
   },
   "exclude": [

@@ -14,7 +14,7 @@ export function hide() {
 }
 
 export function extractState(state: any, ...paths: any[]) {
-  return state.ui.notes.addNote
+  return state.app.notes.createNote
   // return {
   //   ...paths.map(path => ({
   //     [path]: state.ui.notes.addNote[path]

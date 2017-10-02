@@ -1,13 +1,26 @@
 import * as React from 'react'
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
 import { connect } from 'react-redux'
-import { getTheme } from 'ui/theme/actions'
+import { getTheme } from 'data/theme/actions'
 
-import AppBar from 'ui/shared/AppBar'
-import Notes from 'ui/Notes'
+import AppBar from 'App/core/AppBar'
+import Notes from 'App/Notes'
+import logger from 'redux-logger'
+
+const styles = ({ spacing }) => ({
+  app: {
+    flexGrow: 1,
+    padding: spacing.unit * 2,
+    marginTop: 56
+  }
+})
+
+interface IProps {
+  theme: boolean
+}
 
 // add to theme background: #f2f6ff;
-function App({ theme }: any) {
+function App({ theme }: IProps) {
   return (
     <MuiThemeProvider theme={createMuiTheme(theme)}>
       <div className='App'>
@@ -18,9 +31,8 @@ function App({ theme }: any) {
   )
 }
 
-export default connect<any, null, null>(
+export default connect(
   (state: any) => ({
     theme: getTheme(state)
-  }),
-  null
+  })
 )(App)

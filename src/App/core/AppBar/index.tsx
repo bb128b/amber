@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { withStyles, StyleRulesCallback } from 'material-ui/styles'
+import { withStyles } from 'material-ui/styles'
 import MuiAppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
@@ -7,8 +7,9 @@ import Button from 'material-ui/Button'
 import IconButton from 'material-ui/IconButton'
 import MenuIcon from 'material-ui-icons/Menu'
 
-const styles: StyleRulesCallback = theme => ({
+const styles = theme => ({
   root: {
+    position: 'relative' as 'relative',
     // marginTop: theme.spacing.unit * 3,
     width: '100%',
   },
@@ -21,8 +22,14 @@ const styles: StyleRulesCallback = theme => ({
   },
 })
 
+// interface StyledComponentClassNames {
+//   root: string;
+//   flex: string;
+//   menuButton: string;
+// }
+
 interface IOwnProps {
-  // onMenuClick: () => void;
+  onMenuClick?: () => void
 }
 
 function AppBar(props: any) {
@@ -45,4 +52,4 @@ function AppBar(props: any) {
   )
 }
 
-export default withStyles<IOwnProps, StyleRulesCallback>(styles)(AppBar)
+export default withStyles(styles)<IOwnProps>(AppBar)

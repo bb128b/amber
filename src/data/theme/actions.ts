@@ -13,5 +13,5 @@
 //
 // Selectors
 export function getTheme(state: any) {
-  return state.ui.theme
+  return state.data.theme
 }
