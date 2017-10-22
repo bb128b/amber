@@ -1,18 +1,18 @@
 // import Types from './app-actions'
 import { Action } from 'utils/redux'
 import red from 'material-ui/colors/red'
-import deepOrange from 'material-ui/colors/deepOrange'
-import { Palette } from 'material-ui/styles/createPalette'
+import blueGrey from 'material-ui/colors/blueGrey'
+import { PaletteOptions } from 'material-ui/styles/createPalette'
 
-export type IState = {
-  palette: Partial<Palette>
+export interface IState {
+  palette: Partial<PaletteOptions>
 }
 
 const initialState = {
   palette: {
-    primary: deepOrange,
-    secondary: red
-    // type: 'dark', // Switching the dark mode on is a single property value change.
+    primary: blueGrey,
+    secondary: red,
+    type: 'dark' as 'dark',
   }
 }
 

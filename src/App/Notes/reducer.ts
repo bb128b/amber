@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import addNote from './AddNote/reducer'
+import createNote from './CreateNote/reducer'
 
 const reducer = combineReducers({
-  addNote
+  createNote
 })
 
 export default reducer
