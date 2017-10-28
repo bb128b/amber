@@ -19,9 +19,10 @@ This project was bootstrapped with [create-react-app](https://github.com/faceboo
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-Before you start, install:
-- latest version of [node](https://nodejs.org/) _( >= 6.10.3 )_
-- latest version of [npm](https://www.npmjs.com/) _( >= 5.4.2 )_
+Before you start:
+- install the latest version of [node](https://nodejs.org/) _( >= 6.10.3 )_
+- upgrade `npm` to latest _( >= 5.4.2 )_:
+ `npm install -g npm`
 
 ### Installing dependencies
 Run:
