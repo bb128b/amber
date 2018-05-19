@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { withStyles } from 'material-ui/styles'
-import MuiAppBar from 'material-ui/AppBar'
-import Toolbar from 'material-ui/Toolbar'
-import Typography from 'material-ui/Typography'
-import Button from 'material-ui/Button'
-import IconButton from 'material-ui/IconButton'
-import MenuIcon from 'material-ui-icons/Menu'
+import { withStyles } from '@material-ui/core/styles'
+import MuiAppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
+import IconButton from '@material-ui/core/IconButton'
+import Icon from '@material-ui/core/Icon';
 
 const styles = theme => ({
   root: {
@@ -39,10 +39,11 @@ function AppBar(props: any) {
     <div className={classes.root}>
       <MuiAppBar position='fixed'>
         <Toolbar>
-          <IconButton className={classes.menuButton} color='contrast' aria-label='Menu'>
-            <MenuIcon />
+          <IconButton>
+            <Icon>menu</Icon>
+            {/* <MenuIcon /> */}
           </IconButton>
-          <Typography type='title' color='inherit' className={classes.flex}>
+          <Typography color='inherit' className={classes.flex}>
             Amber
           </Typography>
           <Button color='inherit'>Login</Button>

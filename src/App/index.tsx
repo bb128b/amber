@@ -1,5 +1,6 @@
+import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import * as React from 'react'
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 import { getTheme } from 'data/theme/actions'
 
@@ -16,7 +17,7 @@ const styles = ({ spacing }) => ({
 })
 
 interface IProps {
-  theme: boolean
+  theme: ThemeOptions
 }
 
 // add to theme background: #f2f6ff;

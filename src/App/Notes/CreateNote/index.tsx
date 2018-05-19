@@ -1,23 +1,27 @@
 import * as React from 'react'
-import { withStyles } from 'material-ui/styles'
+import { withStyles } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 
-import Divider from 'material-ui/Divider'
-import AppBar from 'material-ui/AppBar'
-import Toolbar from 'material-ui/Toolbar'
-import IconButton from 'material-ui/IconButton'
-import Typography from 'material-ui/Typography'
-import CloseIcon from 'material-ui-icons/Close'
-import Slide from 'material-ui/transitions/Slide'
-import Input from 'material-ui/Input'
+import Divider from '@material-ui/core/Divider'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import IconButton from '@material-ui/core/IconButton'
+import Typography from '@material-ui/core/Typography'
+import Icon from '@material-ui/core/Icon';
+import Slide from '@material-ui/core/Slide'
+import Input from '@material-ui/core/Input'
 import { hide, extractState } from './actions'
 // import { IState } from './reducer'
-import Grid from 'material-ui/Grid'
-import Dialog, { DialogActions, DialogContent, DialogTitle, DialogContentText } from 'material-ui/Dialog'
+import Grid from '@material-ui/core/Grid'
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 import { createNote } from 'data/notes/actions'
 
-import Button from 'material-ui/Button'
+import Button from '@material-ui/core/Button'
 
 import { Field, reduxForm, InjectedFormProps } from 'redux-form'
 
@@ -33,6 +37,7 @@ interface IProps extends InjectedFormProps {
   }
   isOpen: boolean
   handleClose: () => void
+  handleSubmit: () => void
 }
 
 class CreateNote extends React.Component<IProps> {
@@ -52,8 +57,8 @@ class CreateNote extends React.Component<IProps> {
     const { handleSubmit, classes, isOpen, handleClose } = this.props
     return (
       <Dialog
-        transition={<Slide direction='up' />}
-        onRequestClose={handleClose}
+        TransitionComponent={(props) => <Slide direction='up' {...props} />}
+        onClose={handleClose}
         open={isOpen}
         fullScreen
       >
@@ -63,7 +68,7 @@ class CreateNote extends React.Component<IProps> {
             aria-label='Close'
             color='default'
           >
-            <CloseIcon />
+            <Icon>close</Icon>
           </IconButton>
         </Toolbar>
         <DialogContent>

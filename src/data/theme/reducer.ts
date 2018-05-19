@@ -1,8 +1,8 @@
 // import Types from './app-actions'
 import { Action } from 'utils/redux'
-import red from 'material-ui/colors/red'
-import blueGrey from 'material-ui/colors/blueGrey'
-import { PaletteOptions } from 'material-ui/styles/createPalette'
+import red from '@material-ui/core/colors/red'
+import blueGrey from '@material-ui/core/colors/blueGrey'
+import { PaletteOptions } from '@material-ui/core/styles/createPalette'
 
 export interface IState {
   palette: Partial<PaletteOptions>

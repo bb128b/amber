@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { withStyles } from 'material-ui/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 import NoteList from './NoteList'
 import CreateNote from './CreateNote'
-import AddIcon from 'material-ui-icons/Add'
-import Button from 'material-ui/Button'
+import Icon from '@material-ui/core/Icon';
+import Button from '@material-ui/core/Button'
 import { show } from './CreateNote/actions'
 
 const styles = theme => ({
@@ -40,10 +40,10 @@ function NotesPage(props: IProps) {
         className={classes.addButton}
         onClick={handleCreateNote}
         aria-label='Create note'
-        color='accent'
-        fab
+        color='secondary'
+        variant='fab'
       >
-        <AddIcon />
+        <Icon>add</Icon>
       </Button>
       {
         isCreateNoteOpen ? <CreateNote /> : null

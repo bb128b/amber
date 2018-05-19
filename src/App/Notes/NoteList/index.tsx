@@ -1,10 +1,11 @@
 import * as React from 'react'
-import Grid from 'material-ui/Grid'
+import Grid from '@material-ui/core/Grid'
 import { connect } from 'react-redux'
 import { getNotes, INote } from 'data/notes/actions'
-import Card, { CardContent } from 'material-ui/Card'
-import Typography from 'material-ui/Typography'
-import { withStyles } from 'material-ui/styles'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import Typography from '@material-ui/core/Typography'
+import { withStyles } from '@material-ui/core/styles'
 
 interface IProps {
   classes: {
@@ -27,10 +28,10 @@ function NoteList({ classes, notes }: IProps) {
           <Grid item xs={12} key={note.createdAt}>
             <Card className={classes.card} elevation={0}>
               <CardContent>
-                <Typography type='title' gutterBottom>
+                <Typography variant='title' gutterBottom>
                   {note.title}
                 </Typography>
-                <Typography type='subheading'>{note.description}</Typography>
+                <Typography variant='subheading'>{note.description}</Typography>
               </CardContent>
             </Card>
           </Grid>
