@@ -12,7 +12,8 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     padding: theme.spacing.unit * 2,
-    marginTop: 56
+    marginTop: 56,
+    background: 'pink'
   },
   addButton: {
     position: 'fixed' as 'fixed',
@@ -27,15 +28,16 @@ interface IProps {
     addButton: string
   }
   handleCreateNote: () => void
-  isCreateNoteOpen: boolean
 }
 
 function NotesPage(props: IProps) {
-  const { classes, handleCreateNote, isCreateNoteOpen } = props
+  console.log('rendering', 'NotesPage')
+  const { classes, handleCreateNote } = props
 
   return (
     <div className={classes.root}>
       <NoteList />
+      <CreateNote />
       <Button
         className={classes.addButton}
         onClick={handleCreateNote}
@@ -45,19 +47,13 @@ function NotesPage(props: IProps) {
       >
         <Icon>add</Icon>
       </Button>
-      {
-        isCreateNoteOpen ? <CreateNote /> : null
-      }
     </div>
   )
 }
 
-const StyledComponent = withStyles(styles)(NotesPage as any)
+const StyledComponent = withStyles(styles)(NotesPage)
 
-export default connect(
-  (state: any) => ({
-    isCreateNoteOpen: state.app.notes.createNote.isOpen,
-  }),
+export default connect(undefined,
   (dispatch: any) => ({
     handleCreateNote: () => { dispatch(show()) },
   })

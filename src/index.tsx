@@ -1,13 +1,12 @@
 import * as React from 'react'
 import { render } from 'react-dom'
+import App from 'App'
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { reducer as formReducer } from 'redux-form'
 import dataReducer from 'data/reducer'
-import logger from 'redux-logger'
-
-import App from 'App'
 import appReducer from 'App/reducer'
+import logger from 'redux-logger'
 
 const reducer = combineReducers({
   data: dataReducer,

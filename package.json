@@ -9,24 +9,24 @@
     "eject": "react-scripts-ts eject"
   },
   "dependencies": {
-    "@material-ui/core": "x",
-    "react": "x",
-    "react-dom": "x",
-    "react-redux": "x",
-    "react-router": "x",
-    "react-scripts-ts": "x",
-    "redux": "x",
-    "redux-form": "x",
-    "redux-logger": "x"
+    "@material-ui/core": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-redux": "latest",
+    "react-router": "latest",
+    "react-scripts-ts": "latest",
+    "redux": "latest",
+    "redux-form": "latest",
+    "redux-logger": "latest"
   },
   "devDependencies": {
-    "@types/jest": "x",
-    "@types/node": "x",
-    "@types/react": "x",
-    "@types/react-dom": "x",
-    "@types/react-router": "x",
-    "@types/redux-form": "x",
-    "@types/react-redux": "x",
-    "typescript": "x"
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-router": "latest",
+    "@types/redux-form": "latest",
+    "@types/react-redux": "latest",
+    "typescript": "latest"
   }
 }
