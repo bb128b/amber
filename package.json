@@ -17,16 +17,17 @@
     "react-scripts-ts": "latest",
     "redux": "latest",
     "redux-form": "latest",
-    "redux-logger": "latest"
+    "redux-logger": "latest",
+    "redux-persist": "latest"
   },
   "devDependencies": {
     "@types/jest": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/react-redux": "latest",
     "@types/react-router": "latest",
     "@types/redux-form": "latest",
-    "@types/react-redux": "latest",
     "typescript": "latest"
   }
 }
