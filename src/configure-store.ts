@@ -1,12 +1,10 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux'
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage' // defaults to localStorage
-import { reducer as formReducer } from 'redux-form'
-import logger from 'redux-logger'
-
-import dataReducer from 'data/reducer'
-import appReducer from 'App/reducer'
-
+import appReducer from 'App/reducer';
+import dataReducer from 'data/reducer';
+import logger from 'redux-logger';
+import storage from 'redux-persist/lib/storage';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { persistReducer, persistStore } from 'redux-persist';
+import { reducer as formReducer } from 'redux-form';
 
 const reducer = combineReducers({
   data: dataReducer,
@@ -25,7 +23,10 @@ const persistedReducer: any = persistReducer(persistConf, reducer)
 const enhancer = applyMiddleware(logger)
 
 const configureStore = () => {
-  const store = createStore(persistedReducer, enhancer)
+  const store = createStore(persistedReducer, enhancer, 
+    // redux dev tools
+    (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+  )
   const persistor = persistStore(store)
   return { store, persistor }
 }

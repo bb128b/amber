@@ -1,12 +1,12 @@
-import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import * as React from 'react'
+
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import { connect } from 'react-redux'
-import { getTheme } from 'data/theme/actions'
 
 import AppBar from 'App/core/AppBar'
 import Notes from 'App/Notes'
-import logger from 'redux-logger'
+import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
+import { connect } from 'react-redux'
+import { getTheme } from 'data/theme/actions'
 
 const styles = ({ spacing }) => ({
   app: {

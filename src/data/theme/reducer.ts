@@ -1,7 +1,7 @@
 // import Types from './app-actions'
 import { Action } from 'utils/redux'
 import { PaletteOptions } from '@material-ui/core/styles/createPalette'
-import blue from '@material-ui/core/colors/blue'
+import grey from '@material-ui/core/colors/grey'
 // import cyan from '@material-ui/core/colors/cyan'
 
 export interface IState {
@@ -10,7 +10,7 @@ export interface IState {
 
 const initialState = {
   palette: {
-    primary: blue,
+    primary: grey,
     // secondary: cyan,
     type: 'light' as 'light',
   }

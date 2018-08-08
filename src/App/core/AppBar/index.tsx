@@ -1,11 +1,12 @@
 import * as React from 'react'
-import { withStyles } from '@material-ui/core/styles'
+
+import Button from '@material-ui/core/Button'
+import Icon from '@material-ui/core/Icon';
+import IconButton from '@material-ui/core/IconButton'
 import MuiAppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import IconButton from '@material-ui/core/IconButton'
-import Icon from '@material-ui/core/Icon';
+import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
   root: {
